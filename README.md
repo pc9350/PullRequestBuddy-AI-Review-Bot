@@ -1,69 +1,85 @@
-# AI Review Agent
 
-This is a GitHub App that reviews pull requests and submits reviews with AI.
+# PullRequestBuddy 🚀🤖
 
-## Setup
+**PullRequestBuddy** is your ultimate automated pull request (PR) review assistant, designed to streamline your code review process by providing intelligent analyses for **Python**, **JavaScript**, and **TypeScript**. Whether you're working solo or as part of a large team, PullRequestBuddy enhances code quality, ensures consistency, and saves valuable time.
 
-1. Download NGROK [here](https://download.ngrok.com/). This will be used to create a secure tunnel to your local server.
+---
 
-2. Run NGROK in your terminal with the following command:
+## 💡 Features
 
-```
-ngrok http 3000
-```
+- **Multi-Language Support:** Analyze Python, JavaScript, and TypeScript codebases seamlessly.
+- **Enclosing Context Detection:** Identify the smallest enclosing code blocks (functions, classes, loops, conditionals) that fully contain specified lines of code.
+- **Syntax Validation:** Perform thorough syntax checks to ensure your code is free from errors, providing detailed feedback on any issues detected.
+- **GitHub Integration:** Easily integrates into your existing GitHub workflows to automate and enhance the code review process.
+- **Extensible and Modular:** Built with TypeScript for easy integration and scalability, allowing for future enhancements and additional language support.
+- **Detailed Logging:** Offers insightful logs during traversal, aiding in debugging and improving parser performance.
 
-Here you'll see a URL in the format of `https://<random>.ngrok.app`. Make sure to save this URL as you'll need it to configure your GitHub App.
+---
 
-3. Create a new [GitHub App here](https://github.com/settings/apps)
+## 🛠️ Technologies Used
 
-- Make sure to paste the NGROK URL + `/api/review` (e.g. `https://4836-204-48-36-234.ngrok-free.app/api/review`) as the "Webhook URL"
-- Create a webhook secret, this can be anything and then paste it in the "secret" field when setting up the GitHub app
-- Make sure to grant the app the read & write permissions for the following:
-  - Pull Requests
-  - Repository Contents
-  - Issues
-  - Commit Statuses
-  - Webhooks
-- Subscribe to the following events:
+- **Tree-sitter** for syntax parsing.
+- **TypeScript** for robust and scalable development.
+- **GitHub Actions** for seamless CI/CD integration.
+- **Node.js** for server-side processing.
 
-  - Pull Request
-  - Pull Request Review
-  - Pull Request Review Comment
-  - Pull Request Comment Thread
-  - Commit Comment
+---
 
-- Download your private key - this will be used later on to authenticate your app
+## 📥 Installation
 
-- Install your GitHub app to all of your repositories
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pc9350/PullRequestBuddy-AI-Review-Bot.git
+   cd PullRequestBuddy
+   ```
 
-4. Clone the repo
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```
-git clone https://github.com/CoderAgent/SecureAgent
-cd SecureAgent
-```
+3. Configure your environment variables in a `.env` file:
+   ```env
+   GITHUB_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY----- ..."
+   GITHUB_APP_ID=<Your-GitHub-App-ID>
+   GITHUB_WEBHOOK_SECRET=<Your-Webhook-Secret>
+   GROQ_API_KEY=<Your-Groq-API-Key>
+   ```
 
-5. Install dependencies
+---
 
-```
-npm install
-```
+## 🚀 Usage
 
-6. Get your Groq API key [here](https://console.groq.com/keys). Through Groq, you'll have free access to the Llama and Gemini models.
+1. Run the parser script to analyze your code:
+   ```bash
+   ts-node testPythonParser.ts
+   ```
 
-7. Create a `.env` file with the following variables:
+2. Automate reviews by integrating PullRequestBuddy into your GitHub workflow.
 
-```
-GITHUB_PRIVATE_KEY=<your-private-key>
-GITHUB_APP_ID=<your-app-id>
-GITHUB_WEBHOOK_SECRET=<your-webhook-secret>
-GROQ_API_KEY=<your-groq-api-key>
-```
+---
 
-8. Within the `SecureAgent` directory in your IDE, run the code with the following command:
+## 🤝 Contributing
 
-```
-npm run start
-```
+Contributions are welcome! Feel free to fork the repository, make changes, and submit a pull request.
 
-9. Create a pull request on your repository and watch the review agent submit a review!
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 📫 Contact
+
+Feel free to reach out for questions or suggestions:
+
+- **Email:** chhabrapranav2001@gmail.com
+- **LinkedIn:** [Your LinkedIn](https://www.linkedin.com/in/pranavchhabra/)
+
+---
+
+## 🔗 Useful Links
+
+- **GitHub Repository:** [PullRequestBuddy](https://github.com/pc9350/PullRequestBuddy-AI-Review-Bot.git)
