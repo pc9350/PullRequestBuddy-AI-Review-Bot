@@ -76,7 +76,7 @@ This project is licensed under the MIT License.
 Feel free to reach out for questions or suggestions:
 
 - **Email:** chhabrapranav2001@gmail.com
-- **LinkedIn:** [Your LinkedIn](https://www.linkedin.com/in/pranavchhabra/)
+- **LinkedIn:** [Pranav Chhabra](https://www.linkedin.com/in/pranavchhabra/)
 
 ---
 
